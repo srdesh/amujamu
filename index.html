@@ -7,14 +7,21 @@
 	<title>amujamuPromotion</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<script src="jquery.min.js"></script>
-	<script src="bootstrap.min.js"></script>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="lib/iziModal.min.css">
+
+
+
+
 
 	<style>
 	@font-face {
 		font-family: open sans;
-		src: url(openSans-Regular.ttf);
+		src: url(font/openSans-Regular.ttf);
+}
+	@font-face {
+	font-family: open sans;
+	src: url(font/openSans-Bold.ttf);
 }
 
 		body{
@@ -24,7 +31,7 @@
 
 		/*---------hero sector-------*/
 		.hero-unit{
-	    background-image: url('back.jpg');
+	    background-image: url('res/cover.jpg');
 	    background-size: cover;
 		  background-position: center;
 	    width: 100%;
@@ -59,7 +66,7 @@
 
 		/*=========sub-sector=====================*/
 		.sub-unit{
-	    background-image: url('img-1.jpg');
+	    background-image: url('res/other-1.jpg');
 	    background-size: cover;
 		  background-position: center;
 	    width: 100%;
@@ -74,7 +81,7 @@
 		}
 		/*=========third-sector=====================*/
 		.third-unit{
-			background-image: url('img-2.jpg');
+			background-image: url('res/other-2.jpg');
 			background-size: cover;
 			background-position: center;
 			width: 100%;
@@ -107,6 +114,8 @@
 			color: #ffffff;
 		}
 		.scroll-button-text{
+			color: #ffffff;
+			text-decoration: none;
 			line-height: 35px;
 		}
 
@@ -119,13 +128,13 @@
 		#logoFirstPart{
 			font-size: 24px;
 			font-family: open sans;
-			font-weight: 700;
+			font-weight: 600;
 			color: #ffa500;
 		}
 		#logoSecondPart{
 			font-size: 24px;
 			font-family: open sans;
-			font-weight: 700;
+			font-weight: 600;
 			color: #00bfff;
 		}
 
@@ -152,6 +161,15 @@
 			background-color: #000000;
 			color: #ffffff;
 		}
+
+
+		dialog {
+    width: 500px;
+    background:#e8e8e8;
+    border: 1px solid #dadada;
+    font-family:sans-serif;
+    padding: 5px 10px 20px 20px;
+}
 	</style>
 </head>
 
@@ -181,39 +199,36 @@
 	<!--Header-Hero-image!-->
 	  <div class="hero-unit" id="home">
 			<div class="hero-back container">
-					<h1 class="hero-title">Know More About Us</h1>
-					<p class="hero-subtitle">Take a trip take a breath</p>
+					<h1 class="hero-title">เกี่ยวกับเรา</h1>
+					<p class="hero-subtitle">พักเที่ยว พักหายใจ</p>
 					<!--scroll button!-->
 					<div align="center">
-						<a data-scroll class="scroll-button-link" href="#about">
-							<div class="text-center scroll-button">
-								<font class="scroll-button-text">GET IN TOUCH</font>
-							</div>
-						</a>
+							<a href="#" class="scroll-button-link trigger">
+								<div class="text-center scroll-button">
+									<font class="scroll-button-text">ติดต่อ</font>
+								</div>
+							</a>
 					</div>
 			</div>
 	  </div>
 
+		<!--toggle bar!-->
+		<div id="modal">
+		</div>
+		<!--toggle bar ends!-->
+
 	</br>
 	<div class="container text-center">
 		<!--firstPart!-->
-		<h3>What is amujamu?</h3>
+		<h3>อามูจามูคืออะไร</h3>
 			<div class="row">
 				<div class="col-sm-12">
 					<p class="text-justify fontColor" align="left">
-							Amujamu.com is a global tour and activity marketplace.
-							With its simple and super easy yet a powerful interface you
-							can find suitable tours or activities in your desired destination.
-							The site also supports multiple currency and languages. You can
-							find guided tours, community-based tours or other activities like
-							cooking classes or spa. Just search and book your tour. At Amujamu,
-							you will get best tips from the experts. No hassle of complex payment
-							methods or booking system. All are there on your fingertip either you
-							are on a pc or a mobile phone.
-							<strong>
-							Take a trip, take a breath. Use our innovative services at any time
-							from any location across the globe. Stay tension fee about your tour bookings.
-							</strong>
+							อามูจามูคือ ตลาดการค้าออนไลน์สากล ที่รวบรวมกิจกรรมและโอเปอร์เตอร์จากที่ต่างๆ ทั่วทุกหนแห่ง
+							คุณสามารถหาทัวร์ หรือกิจกรรมในที่ที่คุณอยากจะไปได้ง่ายและสะดวกยิ่งขึ้น ด้วยเว็บไซต์ที่รองรับเงินตราต่างประเทศและภาษาที่หลากหลาย
+							ทำให้คุณค้นหาทัวร์นำเที่ยว ทัวร์ตามแหล่งชุมชน หรือแม้แต่กิจกรรมอย่างเช่น ทำอาหาร สปา ได้ง่ายดาย เพียงแค่ค้นหาและกดจองเท่านั้น
+							ที่อามูจามู คุณยังจะได้รับคำแนะนำดีจากๆ ผู้เชี่ยวชาญโดยตรง จึงไร้ปัญหากวนใจเรื่องการจ่ายเงินและระบบการจองที่ซับซ้อน เพราะทุกสิ่งที่เรามี
+							จะทำให้ทุกเรื่องท่องเที่ยวของคุณเป็นเรื่องง่ายแค่ปลายนิ้ว ไม่ว่าเมื่อไร หรือที่ไหนในโลก "พักเที่ยว พักหายใจ ใช้บริการจากเรา"
 					</p>
 				</div>
 			</div>
@@ -221,33 +236,33 @@
 		<!--thirdPart!-->
 	</br></br>
 		<div class="container text-center">
-			<h3>Benefits of tour operators</h3>
+			<h3>ประโยชน์ที่ทัวร์โอเปอเรเตอร์จะได้รับ</h3>
 			</br>
 				<div class="col-sm-12">
 					<div class="row">
 						<div class="col-sm-2">
 							<img src="res/earth.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-							<p class="fontColor">Designed as a compre-</br>hensive solution for maintaining tour globally. </p>
+							<p class="fontColor">ได้รับการออกแบบให้ครอบคลุมทุกความต้องการเพื่อคงความเป็นทัวร์ระดับสากล</p>
 						</div>
 						<div class="col-sm-2">
 							<img src="res/noPrice.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-							<p class="fontColor"> No sign up fee</p>
+							<p class="fontColor">ไม่มีค่าบริการสำหรับการลงทะเบียน</p>
 						</div>
 						<div class="col-sm-2">
 							<img src="res/priceIncrease.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-							<p class="fontColor">Right place for those who want to increase sales, achieve better margins</p>
+							<p class="fontColor">เหมาะสำหรับทัวร์โอเปอเรเตอร์ที่ต้องการเพิ่มยอดขาย บรรลุเป้าหมายที่เพิ่มขึ้นกว่าเดิม</p>
 						</div>
 						<div class="col-sm-2">
 							<img src="res/marketplace.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-							<p class="fontColor">All of your services are listed in a single marketplace</p>
+							<p class="fontColor">ทุกงานบริการของคุณจะถูกรวมไว้ในตลาดการค้าออนไลน์เดียวกัน ง่ายต่อการบริหารจัดการ</p>
 						</div>
 						<div class="col-sm-2">
 							<img src="res/time.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-							<p class="fontColor">Capable of taking the customers booking even in last minutes</p>
+							<p class="fontColor">สามารถอำนวยความสะดวกให้ลูกค้าที่จองออนไลน์ได้แม้นาทีสุดท้าย</p>
 						</div>
 						<div class="col-sm-2">
 							<img src="res/phone.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-							<p class="fontColor">Dedicated mobile application for Tour Operators</p>
+							<p class="fontColor">มีแอพลิแคชั่นไว้อำนวยความสะดวกสำหรับทัวร์โอเปอเรเตอร์โดยเฉพาะ (ไม่เสียค่าบริการ)</p>
 						</div>
 					</div>
 				</div>
@@ -256,27 +271,27 @@
 			</br>
 					<div class="col-sm-2">
 						<img src="res/review.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-						<p class="fontColor">Unbiased review platform</p>
+						<p class="fontColor">ปราศจากกระทู้วิจารณ์ในแง่ลบ</p>
 					</div>
 					<div class="col-sm-2">
 						<img src="res/report.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-						<p class="fontColor">Easy account management </p>
+						<p class="fontColor">สะดวกในการจัดการเรื่องบัญชีการเงิน</p>
 					</div>
 					<div class="col-sm-2">
 						<img src="res/online.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-						<p class="fontColor">More online presence of your company</p>
+						<p class="fontColor">คนทั่วไปสามารถเห็นโฆษณาของบริษัทคุณผ่านโลกออนไลน์มากขึ้น</p>
 					</div>
 					<div class="col-sm-2">
 						<img src="res/marketing.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-						<p class="fontColor">Free marketing for you</p>
+						<p class="fontColor">ฟรีค่าโฆษณา</p>
 					</div>
 					<div class="col-sm-2">
 						<img src="res/pricing.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-						<p class="fontColor">Flexible pricing system</p>
+						<p class="fontColor">ระบบสะดวกต่อการปรับเปลี่ยนราคา</p>
 					</div>
 					<div class="col-sm-2">
 						<img src="res/schedule.png" class="img-responsive" style="display:inline" alt="operator" width="70" height="70">
-						<p class="fontColor">Easy scheduling system for tours</p>
+						<p class="fontColor">สะดวกในการจัดตารางเวลาสำหรับทัวร์</p>
 					</div>
 				</div>
 
@@ -288,16 +303,16 @@
 			<div class="col-sm-6 text-center" align="left">
 				<div class="secondPart sub-unit">
 					<div class="sub-back container">
-						<h3 class="margin">How <strong>amujamu</strong> works?</h3>
+						<h3 class="margin">อามูจามู ทำงานอย่างไร</h3>
 							<div align="left">
 								</br>
 									<ul>
-										<label>For Tour Operators:</label>
-										<li>Create an account at amujamu.com </li>
-										<li>Set up your profile</li>
-										<li>Create/ Upload tours</li>
-										<li>Receive instant bookings</li>
-										<li>Receive payment from us</li>
+										<label>สำหรับ ทัวร์โอเปอเรเตอร์:</label>
+										<li>สร้างบัญชีที่ Amujamu.com </li>
+										<li>สร้าง Profile</li>
+										<li>สร้าง/เพิ่มกิจกรรม</li>
+										<li>ได้รับแจ้งเตือนการจองทันที</li>
+										<li>ได้รับเงินจากเรา</li>
 									</ul>
 								</div>
 							</div>
@@ -307,16 +322,16 @@
 				<div class="col-sm-6 text-center" align="left">
 					<div class="third-unit secondPart">
 						<div class="third-back container">
-							<h3 class="margin">Convenience of using <strong>amujamu.com</strong></h3>
+							<h3 class="margin">ความสะดวกในการใช้ Amujamu.com</h3>
 								<div align="left">
 									</br>
 										<ul>
 											<label>For Tour Operators:</label>
-											<li>Provides comprehensive features to provide a complete solution for tour</li>
-											<li>Highly customizable</li>
-											<li>Easy monitoring for each individual tour and tour day</li>
-											<li>Easy and intuitive web and mobile interface</li>
-											<li>Software based solution</li>
+											<li>นำเสนอรูปแบบที่ครอบคลุม ตอบโจทย์สำหรับทุกทัวร์และทุกกิจกรรม</li>
+											<li>ปรับปรุงแก้ไขง่ายเพื่อผู้ใช้งานที่หลากหลาย</li>
+											<li>สะดวกต่อการติดตามผลเป็นรายทัวร์/กิจกรรม</li>
+											<li>สะดวก ใช้งานง่าย และสามารถเชื่อมต่อกับมือถือได้ </li>
+											<li>ซอฟต์แวร์สามารถรองรับทุกความต้องการ เพื่อการใช้งานอย่างมีประสิทธิภาพ</li>
 										</ul>
 									</div>
 								</div>
@@ -327,18 +342,16 @@
 		</br></br>
 		<!--fifthPart!-->
 		<div class="container text-center">
-			<h3 class="margin">Pricing Strategy</h3>
+			<h3 class="margin">กลยุทธ์เรื่องราคา</h3>
 				<div class="row" align="left">
 					<div class="col-sm-8">
 						<p class="fontColor text-justify" align="left">
-							<strong style="color:#00ACE6">"Your price + Our commission = Final price showed in web"</strong>
+							<strong style="color:#00ACE6">“ราคาคุณ+ คอมมิสชั่นของเรา เท่ากับ ราคาขายหน้าเว็บไซต์”</strong>
 						</br></br>
-							Our pricing strategy is the simplest one. You give us a
-							rate and we add our commission according to the standard
-							market price.  If a tour is sold, you will receive the
-							money that you asked for.
+							กลยุทธ์เรื่องราคาของเรานั้นง่ายมาก เพียงแค่คุณส่งอัตราค่าบริการมาที่เรา และเราจะเพิ่มค่าคอมมิสชั่นตามความเหมาะสม
+							โดยคำนึงถึงราคามาตรฐานของตลาดการค้าออนไลน์เป็นสำคัญ ในกรณีที่ขายได้ คุณจะได้รับเงินตามจำนวนที่ระบุ
 							</br>
-							If you are a tour operator to join with us
+							ถ้าคุณคือ ทัวร์โอเปอเรเตอร์ที่อยากจะก้าวหน้าไปกับเรา โปรดคลิ๊กที่นี่
 							<a href="#"><strong>click here.</strong></a>
 						</p>
 					</div>
@@ -358,6 +371,29 @@
 				<h4 class="margin text-center">Footer</h4>
 			</div>
 		</footer>
+
+
+		<!--====================JS=============================!-->
+		<script src="lib/jquery-3.1.1.min.js" type="text/javascript"></script>
+		<script src="lib/bootstrap.min.js"></script>
+
+		<script src="lib/iziModal.min.js" type="text/javascript"></script>
+
+		<script  type="text/javascript">
+			$(document).on('click', '.trigger', function (event) {
+    		event.preventDefault();
+    		$('#modal').iziModal('open', this);
+			});
+
+			$("#modal").iziModal({
+    		iframe: true,
+    		iframeHeight: 800,
+    		iframeURL: "https://docs.google.com/forms/d/e/1FAIpQLSeycG15Jng2XQTvH8B16ZPkFUFXZYcnpxskjkPOrZGLB_2uUg/viewform?embedded=true"
+			});
+
+
+		</script>
+
 
 </body>
 
