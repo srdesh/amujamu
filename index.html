@@ -29,6 +29,12 @@
 	    width: 100%;
 		}
 
+		.nav-custom{
+			z-index: 1;
+		}
+		#modal{
+			z-index: 99999;
+		}
 		/*---------hero sector-------*/
 		.hero-unit{
 	    background-image: url('res/cover.jpg');
@@ -128,13 +134,13 @@
 		#logoFirstPart{
 			font-size: 24px;
 			font-family: open sans;
-			font-weight: 600;
+			font-weight: 400;
 			color: #ffa500;
 		}
 		#logoSecondPart{
 			font-size: 24px;
 			font-family: open sans;
-			font-weight: 600;
+			font-weight: 400;
 			color: #00bfff;
 		}
 
@@ -175,7 +181,7 @@
 
 <body>
 	<!--headerNavBar!-->
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top nav-custom">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
